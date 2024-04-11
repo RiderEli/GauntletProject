@@ -4,32 +4,37 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    private Rigidbody enemyRB;
+    public GameObject player;
+
     //Enemy Codes
     [Header("Adjust Enemy Speed")]
-    [Range(0,10)]
+    [Range(1,10)]
     public float enemySpeed;
 
     [Header("EnemyStats")]
+    [Range(1,5)]
     public int enemyDamage;
+    [Range(1,5)]
     public int enemyHealth;
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
-        
+        enemyRB = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
-        
+        Movement();
     }
 
-    private void Movement()
+    void Movement()
     {
-
+        enemyRB.velocity = Vector3.MoveTowards(transform.position, player.transform.position, enemySpeed * Time.deltaTime);
     }
 
-    private void Attack()
+    void Attack()
     {
 
     }
