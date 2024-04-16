@@ -7,7 +7,7 @@ using static UnityEngine.InputSystem.DefaultInputActions;
 public class Player : MonoBehaviour
 {
     PlayerController controller;
-    private Rigidbody playerRB;
+   // private Rigidbody playerRB;
 
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected GameObject shot;
@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+       // playerRB = GetComponent<Rigidbody>();
         controller = new PlayerController();
         controller.Enable();
         moveSpeed = 10f;
@@ -28,7 +29,8 @@ public class Player : MonoBehaviour
         //get the vector2 data from teh move action composite
         Vector2 moveVec = controller.Movement.Move.ReadValue<Vector2>();
 
-        playerRB.MovePosition(new Vector3(moveVec.x, 0, moveVec.y) * Time.deltaTime * moveSpeed);
+        // playerRB.MovePosition(new Vector3(moveVec.x, 0, moveVec.y) * Time.deltaTime * moveSpeed);
+        transform.position += new Vector3(moveVec.x, 0, moveVec.y) * Time.deltaTime * moveSpeed;
     }
 
     public void Shoot()
