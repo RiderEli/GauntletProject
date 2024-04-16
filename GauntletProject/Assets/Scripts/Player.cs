@@ -7,6 +7,7 @@ using static UnityEngine.InputSystem.DefaultInputActions;
 public class Player : MonoBehaviour
 {
     PlayerController controller;
+    private Rigidbody playerRB;
 
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected GameObject shot;
@@ -27,7 +28,7 @@ public class Player : MonoBehaviour
         //get the vector2 data from teh move action composite
         Vector2 moveVec = controller.Movement.Move.ReadValue<Vector2>();
 
-        transform.position += new Vector3(moveVec.x, 0, moveVec.y) * Time.deltaTime * moveSpeed;
+        playerRB.MovePosition(new Vector3(moveVec.x, 0, moveVec.y) * Time.deltaTime * moveSpeed);
     }
 
     public void Shoot()
