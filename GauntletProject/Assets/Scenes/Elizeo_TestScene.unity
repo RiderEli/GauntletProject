@@ -894,7 +894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  shot: {fileID: 0}
+  shot: {fileID: 394650226331479970, guid: 34cbd82664b22e94d885058eb4c727a4, type: 3}
   health: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
