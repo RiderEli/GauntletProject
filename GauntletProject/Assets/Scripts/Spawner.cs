@@ -20,10 +20,9 @@ public class Spawner : MonoBehaviour
         SpawnTypeSetup();
     }
 
-    // Update is called once per frame
-    void Update()
+    protected void OnEnable()
     {
-        SpawnEnemy();
+        StartCoroutine(SpawnEnemyRoutine());
     }
 
     public enum SpawnerType
