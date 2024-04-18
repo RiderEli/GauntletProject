@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour
     public int spawnLevel;
     public int spawnDir;
     public int dmgManipulator;
-    public float spawnTime = 1f;
+    public float spawnTime = 2f;
 
     public GameObject ghostPrefab;
 
@@ -42,20 +42,22 @@ public class Spawner : MonoBehaviour
         }
 
     }
+    private IEnumerator SpawnEnemyRoutine()
+    {
+        while (enabled)
+        {
+            SpawnEnemy();
 
+            var waitTime = (Random.Range(1f, spawnTime));
+            yield return new WaitForSeconds(waitTime);
+        }
+    }
     private void SpawnEnemy()
     {
         if (spawnLevel == 0)
             {
-            StartCoroutine(GhostSpawnDelay());
-        }
-    }
-
-    public IEnumerator GhostSpawnDelay()
-    {
-        Instantiate(ghostPrefab, transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(spawnTime);
-
+            Instantiate(ghostPrefab, transform.position, Quaternion.identity);
+            }
     }
 
     private void DamageTaken()
