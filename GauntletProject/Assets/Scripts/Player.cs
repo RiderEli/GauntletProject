@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
    // private Rigidbody playerRB;
 
     [SerializeField] protected float moveSpeed;
-    [SerializeField] protected GameObject shot;
+    public GameObject shot;
     [SerializeField] protected int health;
     [SerializeField] protected float shotDelay;
     private bool _hasShot;
@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
         controller.Enable();
         moveSpeed = 10f;
         _hasShot = false;
+        controller.Movement.Shoot.started += _ => ElizeoShoot();
     }
 
     private void Update()
@@ -39,7 +40,15 @@ public class Player : MonoBehaviour
     public void Shoot()
     {
         //Debug.Log("Shoot!");
-        StartCoroutine(FireProjectile());
+
+        /* Rodrigo's Code
+        //StartCoroutine(FireProjectile());
+        */
+    }
+
+    public void ElizeoShoot()
+    {
+        Instantiate(shot, transform.position, transform.rotation);
     }
 
     private void TurnPlayer()
@@ -69,7 +78,7 @@ public class Player : MonoBehaviour
         }
     }
     
-    private IEnumerator FireProjectile()
+   /* private IEnumerator FireProjectile()
     {
         if(!_hasShot)
         {
@@ -81,4 +90,5 @@ public class Player : MonoBehaviour
             _hasShot = false;
         }
     }
+   */
 }
