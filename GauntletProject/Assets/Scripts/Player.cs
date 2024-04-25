@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected GameObject shot;
     [SerializeField] protected int health;
+    [SerializeField] protected float shotDelay;
     private bool _hasShot;
     private Vector2 moveVec;
 
@@ -74,9 +75,9 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Shoot!");
        
-            Instantiate(shot, new Vector3(transform.position.x, 1, transform.position.z), Quaternion.identity);
+            Instantiate(shot, transform.position, transform.rotation);
             _hasShot = true;
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(shotDelay);
             _hasShot = false;
         }
     }

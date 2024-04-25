@@ -9,6 +9,6 @@ public class Shot : MonoBehaviour
 
     private void Update()
     {
-       gameObject.transform.position += Vector3.forward * Time.deltaTime * shotSpeed;
+       gameObject.transform.position += transform.forward * Time.deltaTime * shotSpeed;
     }
 }
