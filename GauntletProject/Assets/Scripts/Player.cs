@@ -53,6 +53,7 @@ public class Player : MonoBehaviour
     public void ElizeoShoot()
     {
         Instantiate(shot, transform.position, transform.rotation);
+        StartCoroutine(FireDelay());
     }
 
     private void TurnPlayer()
@@ -68,20 +69,6 @@ public class Player : MonoBehaviour
         {
             playerRB.MoveRotation(Quaternion.Euler(0, -90, 0));
         }
-
-        //If A and W are pressed at the same time
-        if (moveVec.x == -1 & moveVec.y == 1)
-        {
-            playerRB.MoveRotation(Quaternion.Euler(0, 40, 0));
-        }
-
-        //if A and S are pressed at the same time
-        if(moveVec.x == 1 & moveVec.y == -1)
-        {
-            playerRB.MoveRotation(Quaternion.Euler(0, -120, 0));
-        }
-
-        //
 
         //if S is pressed turn to face down
         if (moveVec.y == -1)
@@ -109,4 +96,11 @@ public class Player : MonoBehaviour
         }
     }
    */
+
+    private IEnumerator FireDelay()
+    {
+        controller.Movement.Shoot.Disable();
+        yield return new WaitForSeconds(0.5f);
+        controller.Movement.Shoot.Enable();
+    }
 }
