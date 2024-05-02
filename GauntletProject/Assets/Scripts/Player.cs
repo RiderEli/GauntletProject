@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
             playerRB.MoveRotation(Quaternion.Euler(0, 0, 0));
         }
 
-        if (Input.GetKey("w") & Input.GetKey("a"))
+        if (controller.Movement.RotateTopLeft.IsPressed())
         {
             playerRB.MoveRotation(Quaternion.Euler(0, -45, 0));
         }
@@ -75,16 +75,31 @@ public class Player : MonoBehaviour
             playerRB.MoveRotation(Quaternion.Euler(0, -90, 0));
         }
 
+        if (controller.Movement.RotateTopRight.IsPressed())
+        {
+            playerRB.MoveRotation(Quaternion.Euler(0, 45, 0));
+        }
+
         //if S is pressed turn to face down
         if (moveVec.y == -1)
         {
             playerRB.MoveRotation(Quaternion.Euler(0, 180, 0));
         }
 
+        if (controller.Movement.RotateBottomLeft.IsPressed())
+        {
+            playerRB.MoveRotation(Quaternion.Euler(0, -135, 0));
+        }
+
         //if D is pressed turn to face right
         if (moveVec.x == 1)
         {
             playerRB.MoveRotation(Quaternion.Euler(0, 90, 0));
+        }
+
+        if (controller.Movement.RotateBottomRight.IsPressed())
+        {
+            playerRB.MoveRotation(Quaternion.Euler(0, 135, 0));
         }
     }
     

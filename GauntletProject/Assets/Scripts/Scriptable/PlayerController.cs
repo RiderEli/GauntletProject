@@ -44,6 +44,42 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RotateTopLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""5201a3b3-ba2b-4f6b-8c2f-d312b3e25ae4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RotateTopRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""89426b6e-c6c3-46d5-a2e4-0351ccb41246"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RotateBottomLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""58429e19-93db-4d4e-8280-5305e4711e59"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RotateBottomRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""11b1bcf5-97c3-4792-9ec2-2689782f9e6b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -112,6 +148,138 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""d9be2bc1-0f20-4b00-ab44-9246bc00d5c8"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateTopLeft"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""05a95a5b-6488-40ed-b288-fef7709514b0"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateTopLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""67ab0af2-bb30-4c08-a18c-76a08a857cdf"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateTopLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""26fc8155-1be9-4aa2-81df-774395d86ef4"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateTopRight"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""8e3c4df4-0e82-4cbf-905c-afbbec9611d6"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateTopRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""8d8f4b43-e68e-4c5b-a534-09284ba8c5db"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateTopRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""cc3a2f85-e4fb-4167-a4e9-3ecd76fff354"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateBottomLeft"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""af37a8f3-0916-429c-bea2-7f6af8f6ef83"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateBottomLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""1322eebe-215e-42a9-8bd0-91b5494acbd8"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateBottomLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""ab315b3d-4249-4d7a-bb9b-5321f5f3b316"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateBottomRight"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""04aedbe2-957c-463b-905d-ba453c16190d"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateBottomRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""722c51a1-546f-4b14-b9f2-dd455f7ea6e5"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateBottomRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -122,6 +290,10 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
         m_Movement = asset.FindActionMap("Movement", throwIfNotFound: true);
         m_Movement_Move = m_Movement.FindAction("Move", throwIfNotFound: true);
         m_Movement_Shoot = m_Movement.FindAction("Shoot", throwIfNotFound: true);
+        m_Movement_RotateTopLeft = m_Movement.FindAction("RotateTopLeft", throwIfNotFound: true);
+        m_Movement_RotateTopRight = m_Movement.FindAction("RotateTopRight", throwIfNotFound: true);
+        m_Movement_RotateBottomLeft = m_Movement.FindAction("RotateBottomLeft", throwIfNotFound: true);
+        m_Movement_RotateBottomRight = m_Movement.FindAction("RotateBottomRight", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -185,12 +357,20 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
     private List<IMovementActions> m_MovementActionsCallbackInterfaces = new List<IMovementActions>();
     private readonly InputAction m_Movement_Move;
     private readonly InputAction m_Movement_Shoot;
+    private readonly InputAction m_Movement_RotateTopLeft;
+    private readonly InputAction m_Movement_RotateTopRight;
+    private readonly InputAction m_Movement_RotateBottomLeft;
+    private readonly InputAction m_Movement_RotateBottomRight;
     public struct MovementActions
     {
         private @PlayerController m_Wrapper;
         public MovementActions(@PlayerController wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Movement_Move;
         public InputAction @Shoot => m_Wrapper.m_Movement_Shoot;
+        public InputAction @RotateTopLeft => m_Wrapper.m_Movement_RotateTopLeft;
+        public InputAction @RotateTopRight => m_Wrapper.m_Movement_RotateTopRight;
+        public InputAction @RotateBottomLeft => m_Wrapper.m_Movement_RotateBottomLeft;
+        public InputAction @RotateBottomRight => m_Wrapper.m_Movement_RotateBottomRight;
         public InputActionMap Get() { return m_Wrapper.m_Movement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -206,6 +386,18 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
             @Shoot.started += instance.OnShoot;
             @Shoot.performed += instance.OnShoot;
             @Shoot.canceled += instance.OnShoot;
+            @RotateTopLeft.started += instance.OnRotateTopLeft;
+            @RotateTopLeft.performed += instance.OnRotateTopLeft;
+            @RotateTopLeft.canceled += instance.OnRotateTopLeft;
+            @RotateTopRight.started += instance.OnRotateTopRight;
+            @RotateTopRight.performed += instance.OnRotateTopRight;
+            @RotateTopRight.canceled += instance.OnRotateTopRight;
+            @RotateBottomLeft.started += instance.OnRotateBottomLeft;
+            @RotateBottomLeft.performed += instance.OnRotateBottomLeft;
+            @RotateBottomLeft.canceled += instance.OnRotateBottomLeft;
+            @RotateBottomRight.started += instance.OnRotateBottomRight;
+            @RotateBottomRight.performed += instance.OnRotateBottomRight;
+            @RotateBottomRight.canceled += instance.OnRotateBottomRight;
         }
 
         private void UnregisterCallbacks(IMovementActions instance)
@@ -216,6 +408,18 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
             @Shoot.started -= instance.OnShoot;
             @Shoot.performed -= instance.OnShoot;
             @Shoot.canceled -= instance.OnShoot;
+            @RotateTopLeft.started -= instance.OnRotateTopLeft;
+            @RotateTopLeft.performed -= instance.OnRotateTopLeft;
+            @RotateTopLeft.canceled -= instance.OnRotateTopLeft;
+            @RotateTopRight.started -= instance.OnRotateTopRight;
+            @RotateTopRight.performed -= instance.OnRotateTopRight;
+            @RotateTopRight.canceled -= instance.OnRotateTopRight;
+            @RotateBottomLeft.started -= instance.OnRotateBottomLeft;
+            @RotateBottomLeft.performed -= instance.OnRotateBottomLeft;
+            @RotateBottomLeft.canceled -= instance.OnRotateBottomLeft;
+            @RotateBottomRight.started -= instance.OnRotateBottomRight;
+            @RotateBottomRight.performed -= instance.OnRotateBottomRight;
+            @RotateBottomRight.canceled -= instance.OnRotateBottomRight;
         }
 
         public void RemoveCallbacks(IMovementActions instance)
@@ -237,5 +441,9 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
+        void OnRotateTopLeft(InputAction.CallbackContext context);
+        void OnRotateTopRight(InputAction.CallbackContext context);
+        void OnRotateBottomLeft(InputAction.CallbackContext context);
+        void OnRotateBottomRight(InputAction.CallbackContext context);
     }
 }
