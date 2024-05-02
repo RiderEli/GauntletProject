@@ -6,7 +6,7 @@ using static UnityEngine.InputSystem.DefaultInputActions;
 
 public class Player : MonoBehaviour
 {
-    PlayerController controller;
+    public PlayerController controller;
     private Rigidbody playerRB;
     
 
@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
         playerRB = GetComponent<Rigidbody>();
         controller = new PlayerController();
         controller.Enable();
-        moveSpeed = 10f;
+        moveSpeed = 5f;
         _hasShot = false;
         controller.Movement.Shoot.started += _ => ElizeoShoot();
     }
@@ -35,9 +35,9 @@ public class Player : MonoBehaviour
         //get the vector2 data from teh move action composite
         moveVec = controller.Movement.Move.ReadValue<Vector2>();
 
-        // playerRB.MovePosition(new Vector3(moveVec.x, 0, moveVec.y) * Time.deltaTime * moveSpeed);
-       // transform.position += new Vector3(moveVec.x, 0, moveVec.y) * Time.deltaTime * moveSpeed;
-        playerRB.velocity = new Vector3(moveVec.x, 0, moveVec.y) * moveSpeed;
+        //playerRB.MovePosition(new Vector3(moveVec.x, 0, moveVec.y) * Time.deltaTime * moveSpeed);
+        transform.position += new Vector3(moveVec.x, 0, moveVec.y) * Time.deltaTime * moveSpeed;
+        //playerRB.velocity = new Vector3(moveVec.x, 0, moveVec.y) * Time.deltaTime * moveSpeed;
         TurnPlayer();
     }
 
@@ -62,6 +62,11 @@ public class Player : MonoBehaviour
         if (moveVec.y == 1)
         {
             playerRB.MoveRotation(Quaternion.Euler(0, 0, 0));
+        }
+
+        if (Input.GetKey("w") & Input.GetKey("a"))
+        {
+            playerRB.MoveRotation(Quaternion.Euler(0, -45, 0));
         }
 
         //if A is pressed turn to face left
