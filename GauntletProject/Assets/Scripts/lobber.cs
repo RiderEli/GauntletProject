@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class lobber : Enemy
+public class lobber : EnemyBase
 {
     protected override void Stats()
     {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sorcerer : Enemy
+public class Sorcerer : EnemyBase
 {
     private bool isBlinking = false;
 

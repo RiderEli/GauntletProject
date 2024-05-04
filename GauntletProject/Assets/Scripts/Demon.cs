@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Demon : Enemy
+public class Demon : EnemyBase
 {
     // default distance will shoot at the player
     // another distance will switch to bite

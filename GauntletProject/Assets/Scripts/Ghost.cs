@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ghost : Enemy
+public class Ghost : EnemyBase
 {
     private float explodeRange = 2.5f;
 
