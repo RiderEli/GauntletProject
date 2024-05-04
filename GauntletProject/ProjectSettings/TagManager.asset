@@ -4,7 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
+  - Sorcerer
+  - Ghost
+  - Demon
+  - Fireball
   layers:
   - Default
   - TransparentFX
