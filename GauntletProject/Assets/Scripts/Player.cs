@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     [SerializeField] protected float moveSpeed;
     public GameObject shot;
     [SerializeField] protected int health;
-    //[SerializeField] //protected float shotDelay;
+    public float shotDelay;
     private bool _hasShot;
     private Vector2 moveVec;
 
@@ -133,7 +133,7 @@ public class Player : MonoBehaviour
     private IEnumerator FireDelay()
     {
         _hasShot = true;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(shotDelay);
         _hasShot = false;
     }
 }

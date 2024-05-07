@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4389394703116033052}
   - component: {fileID: 934260049007387495}
   m_Layer: 0
-  m_Name: Shot
+  m_Name: WarriorShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e7727150037ebd4408d3df236f3a0dc4, type: 2}
+  - {fileID: 2100000, guid: af8b48f0d33244d4d83c7ff7c217da42, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6cf0335463476147ad4a9b212e4ae1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotSpeed: 10
+  shotSpeed: 3
   shotDamage: 10
 --- !u!54 &934260049007387495
 Rigidbody:

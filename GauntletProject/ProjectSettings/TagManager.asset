@@ -8,6 +8,7 @@ TagManager:
   - Ghost
   - Demon
   - Fireball
+  - RangeBox
   layers:
   - Default
   - TransparentFX

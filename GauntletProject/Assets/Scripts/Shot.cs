@@ -13,9 +13,17 @@ public class Shot : MonoBehaviour
         shotRB = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    public virtual void Update()
     { 
        //gameObject.transform.position += Vector3.forward * Time.deltaTime * shotSpeed;
        shotRB.AddRelativeForce(Vector3.forward * shotSpeed);
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("RangeBox"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
