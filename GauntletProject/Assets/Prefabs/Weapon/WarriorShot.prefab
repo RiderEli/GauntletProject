@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6554473025966743678}
   - component: {fileID: 5376818233415025194}
   - component: {fileID: 8342256972855331794}
-  - component: {fileID: 4389394703116033052}
   - component: {fileID: 934260049007387495}
   m_Layer: 0
   m_Name: WarriorShot
@@ -107,20 +106,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4389394703116033052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 394650226331479970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6cf0335463476147ad4a9b212e4ae1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shotSpeed: 3
-  shotDamage: 10
 --- !u!54 &934260049007387495
 Rigidbody:
   m_ObjectHideFlags: 0
