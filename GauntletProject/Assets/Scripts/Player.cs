@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     [SerializeField] protected float moveSpeed;
     public GameObject shot;
     [SerializeField] protected int health;
-    [SerializeField] protected float shotDelay;
+    //[SerializeField] //protected float shotDelay;
     private bool _hasShot;
     private Vector2 moveVec;
 
@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
         controller.Movement.Shoot.started += _ => ElizeoShoot();
     }
 
-    private void Update()
+    public virtual void Update()
     {
         //get the vector2 data from teh move action composite
         moveVec = controller.Movement.Move.ReadValue<Vector2>();
@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
         transform.position += new Vector3(moveVec.x, 0, moveVec.y) * Time.deltaTime * moveSpeed;
         //playerRB.velocity = new Vector3(moveVec.x, 0, moveVec.y) * Time.deltaTime * moveSpeed;
         TurnPlayer();
+        ShotDelay();
     }
 
     public void Shoot()
@@ -117,10 +118,22 @@ public class Player : MonoBehaviour
     }
    */
 
+    private void ShotDelay()
+    {
+        if (!_hasShot)
+        {
+            controller.Movement.Shoot.Enable();
+        }
+        else
+        {
+            controller.Movement.Shoot.Disable();
+        }
+    }
+
     private IEnumerator FireDelay()
     {
-        controller.Movement.Shoot.Disable();
+        _hasShot = true;
         yield return new WaitForSeconds(0.5f);
-        controller.Movement.Shoot.Enable();
+        _hasShot = false;
     }
 }
