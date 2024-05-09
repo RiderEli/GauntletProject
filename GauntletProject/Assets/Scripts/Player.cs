@@ -27,6 +27,10 @@ public class Player : MonoBehaviour
         controller.Enable();
         moveSpeed = 5f;
         _hasShot = false;
+    }
+
+    public virtual void Start()
+    {
         controller.Movement.Shoot.started += _ => ElizeoShoot();
     }
 
@@ -130,7 +134,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private IEnumerator FireDelay()
+    public IEnumerator FireDelay()
     {
         _hasShot = true;
         yield return new WaitForSeconds(shotDelay);

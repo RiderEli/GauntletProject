@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Valkrie : Player
 {
-    //Child Script for Valkyrie
+// Valkyrie
 }
