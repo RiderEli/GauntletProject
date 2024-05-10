@@ -10,9 +10,9 @@ public class Player : MonoBehaviour
     private Rigidbody playerRB;
     
 
-    [SerializeField] protected float moveSpeed;
+    public float moveSpeed;
     public GameObject shot;
-    [SerializeField] protected int health;
+    public int health;
     public float shotDelay;
     private bool _hasShot;
     private Vector2 moveVec;
