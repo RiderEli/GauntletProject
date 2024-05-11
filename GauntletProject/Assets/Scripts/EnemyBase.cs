@@ -99,13 +99,12 @@ public class EnemyBase : MonoBehaviour
         // demon - shoots fireballs
         // lobber - throws rocks
     }
-    /*
+
     protected void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "name of tag")
+        if (collision.gameObject.tag == "Weapon")
         {
-            gameObject.SetActive(false);
+            Destroy(this.gameObject);
         }
     }
-    */
 }
