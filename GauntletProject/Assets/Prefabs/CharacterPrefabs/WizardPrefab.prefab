@@ -200,6 +200,7 @@ GameObject:
   - component: {fileID: 7326586426333784613}
   - component: {fileID: 340327952558429171}
   - component: {fileID: 2830308530365127758}
+  - component: {fileID: 1244588805660722451}
   m_Layer: 0
   m_Name: WizardPrefab
   m_TagString: Player
@@ -289,6 +290,18 @@ MonoBehaviour:
   shot: {fileID: 4194410679320884337, guid: 80d6826cc2c133e4d8ec7aaef8fac64c, type: 3}
   health: 10
   shotDelay: 1
+--- !u!114 &1244588805660722451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8676445842785582368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80a6bca4c483a7847a04c446e79afdb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8933221095224493145
 GameObject:
   m_ObjectHideFlags: 0

@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 7326586426333784613}
   - component: {fileID: 340327952558429171}
   - component: {fileID: 1970527427571729098}
+  - component: {fileID: 4425834493803530868}
   m_Layer: 0
   m_Name: ElfPrefab
   m_TagString: Player
@@ -372,3 +373,15 @@ MonoBehaviour:
   shot: {fileID: 8713777155063586548, guid: 737c1644537cb0944a2946fb97ea39d9, type: 3}
   health: 10
   shotDelay: 1
+--- !u!114 &4425834493803530868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8676445842785582368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80a6bca4c483a7847a04c446e79afdb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

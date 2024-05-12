@@ -139,17 +139,6 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""10945973-35cc-4254-a8cb-321a0f33cf60"",
-                    ""path"": ""<Keyboard>/f"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Shoot"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
                     ""name"": ""One Modifier"",
                     ""id"": ""d9be2bc1-0f20-4b00-ab44-9246bc00d5c8"",
                     ""path"": ""OneModifier"",
@@ -280,6 +269,17 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
                     ""action"": ""RotateBottomRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5826ebf6-2cd4-413d-995f-b5467c756ef9"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
