@@ -146,3 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64223b3bce1d4c24ca585ab074fdfe75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  demon: {fileID: 80604187487281482, guid: 64397d6209da7a347925d6025b888acf, type: 3}
+  elf: {fileID: 1970527427571729098, guid: aa0d61b58352efc4ba557b106e9282f0, type: 3}
+  warrior: {fileID: 4294836543208601210, guid: 6d0876798f1a1ef45bfb9efa12038716, type: 3}
+  valkrie: {fileID: 1145503813989727784, guid: 09ac3a8a0f01d6e4d9fab5abc7242238, type: 3}
+  wizard: {fileID: 2830308530365127758, guid: 6b31ecba45001ad43b7291491c8d2556, type: 3}

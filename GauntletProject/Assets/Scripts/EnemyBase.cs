@@ -11,7 +11,7 @@ public class EnemyBase : MonoBehaviour
     // health is the same level as the generator it spawned from
     protected int health;
     // depends on the level it is
-    protected int damage;
+    public int damage;
     protected int maxDamage;
     protected int midDamage;
     protected int minDamage;
@@ -28,7 +28,7 @@ public class EnemyBase : MonoBehaviour
     [SerializeField]
     protected GameObject wizard;
 
-    protected Transform target;
+    public Transform target;
 
     protected float range = 5f;
     protected float disElf;

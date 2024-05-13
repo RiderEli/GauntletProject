@@ -119,7 +119,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ba928d0507f15642aa27e9be46d127b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 5654253398257268014, guid: 7756856506c539e48af5a17f14d34b72, type: 3}
+  lob: {fileID: 7469515340336273963, guid: 51f4e26c84727fc478ef9fbe494ca04d, type: 3}
+  elf: {fileID: 1970527427571729098, guid: aa0d61b58352efc4ba557b106e9282f0, type: 3}
+  warrior: {fileID: 4294836543208601210, guid: 6d0876798f1a1ef45bfb9efa12038716, type: 3}
+  valkrie: {fileID: 1145503813989727784, guid: 09ac3a8a0f01d6e4d9fab5abc7242238, type: 3}
+  wizard: {fileID: 2830308530365127758, guid: 6b31ecba45001ad43b7291491c8d2556, type: 3}
 --- !u!54 &8425652356458513796
 Rigidbody:
   m_ObjectHideFlags: 0
