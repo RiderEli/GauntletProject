@@ -16,24 +16,42 @@ public class EnemyBase : MonoBehaviour
     protected int midDamage;
     protected int minDamage;
     [SerializeField]
-    //protected Spawner spawner;
+    protected Spawner spawner;
     // the distance from the player and the enemy
     // will need to know for all players
-    protected GameObject player;
+    [SerializeField]
+    protected GameObject elf;
+    [SerializeField]
+    protected GameObject warrior;
+    [SerializeField]
+    protected GameObject valkrie;
+    [SerializeField]
+    protected GameObject wizard;
+
     protected Transform target;
+
     protected float range = 5f;
+    protected float disElf;
+    protected float disWarrior;
+    protected float disValkrie;
+    protected float disWizard;
 
     protected virtual void Start()
     {
-        //health = spawner.spawnLevel;
+        health = spawner.spawnLevel;
         rb = GetComponent<Rigidbody>();
-        target = player.transform;
+        
         Stats();
+
+        disElf = Vector3.Distance(elf.transform.position, this.transform.position);
+        disWarrior = Vector3.Distance(warrior.transform.position, this.transform.position);
+        disValkrie = Vector3.Distance(valkrie.transform.position, this.transform.position);
+        disWizard = Vector3.Distance(wizard.transform.position, this.transform.position);
     }
 
     protected virtual void Update()
     {
-        //PlayerInRange(range);
+        Damage();
         // move towards player when enemy detects them
         if (CheckDis())
         {
@@ -59,11 +77,53 @@ public class EnemyBase : MonoBehaviour
         {
             damage = midDamage;
         }
-        else if (health <= 1)
+        else if (health == 1)
         {
             damage = minDamage;
         }
+        else if (health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
+
+    protected bool CheckDis()
+    {
+        
+
+        bool tmp = false; // have
+        if (disElf <= range)
+        {
+            //Debug.Log("In range - start blinking");
+            tmp = true; // have
+            target = elf.transform;
+        }
+        else if (disWarrior <= range)
+        {
+            //Debug.Log("In range - start blinking");
+            tmp = true; // have
+            target = warrior.transform;
+        }
+        else if (disValkrie <= range)
+        {
+            //Debug.Log("In range - start blinking");
+            tmp = true; // have
+            target = valkrie.transform;
+        }
+        else if (disWizard <= range)
+        {
+            //Debug.Log("In range - start blinking");
+            tmp = true; // have
+            target = wizard.transform;
+        }
+        else
+        {
+            tmp = false;
+            //Debug.Log("Out of range - stop blinking");
+        }
+        return tmp;
+    }
+    /*
     protected bool CheckDis()
     {
         float dis = Vector3.Distance(player.transform.position, this.transform.position); // have
@@ -80,8 +140,7 @@ public class EnemyBase : MonoBehaviour
         }
         return tmp;
     }
-
-
+    */
 
     protected void Movement()
     {
@@ -104,7 +163,27 @@ public class EnemyBase : MonoBehaviour
     {
         if (collision.gameObject.tag == "Weapon")
         {
-            Destroy(this.gameObject);
+            health--;
+        }
+
+        if (collision.gameObject.tag == "Player")
+        {
+            if (target == elf)
+            {
+                elf.GetComponent<Elf>().health -= damage;
+            }
+            else if (target == warrior)
+            {
+                warrior.GetComponent<Warrior>().health -= damage;
+            }
+            else if (target == valkrie)
+            {
+                valkrie.GetComponent<Valkrie>().health -= damage;
+            }
+            else if (target == wizard)
+            {
+                wizard.GetComponent<Wizard>().health -= damage;
+            }
         }
     }
 }

@@ -11,7 +11,6 @@ public class Sorcerer : EnemyBase
     {
         //health = spawner.spawnLevel;
         rb = GetComponent<Rigidbody>();
-        target = player.transform;
         Stats();
 
         base.Start();

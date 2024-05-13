@@ -6,7 +6,15 @@ public class Death : MonoBehaviour
 {
     private float speed = 110;
     private Rigidbody rb;
-    private GameObject player;
+    [SerializeField]
+    protected GameObject elf;
+    [SerializeField]
+    protected GameObject warrior;
+    [SerializeField]
+    protected GameObject valkrie;
+    [SerializeField]
+    protected GameObject wizard;
+
     private Transform target;
     private float range = 15;
     private int damageTaken;
@@ -17,7 +25,7 @@ public class Death : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        target = player.transform;
+        
     }
 
     private void Update()
@@ -36,15 +44,40 @@ public class Death : MonoBehaviour
 
     private bool CheckDis()
     {
-        float dis = Vector3.Distance(player.transform.position, this.transform.position);
-        bool tmp = false;
-        if (dis <= range)
+        float disElf = Vector3.Distance(elf.transform.position, this.transform.position);
+        float disWarrior = Vector3.Distance(warrior.transform.position, this.transform.position);
+        float disValkrie = Vector3.Distance(valkrie.transform.position, this.transform.position);
+        float disWizard = Vector3.Distance(wizard.transform.position, this.transform.position);
+
+        bool tmp = false; // have
+        if (disElf <= range)
         {
-            tmp = true;
+            //Debug.Log("In range - start blinking");
+            tmp = true; // have
+            target = elf.transform;
+        }
+        else if (disWarrior <= range)
+        {
+            //Debug.Log("In range - start blinking");
+            tmp = true; // have
+            target = warrior.transform;
+        }
+        else if (disValkrie <= range)
+        {
+            //Debug.Log("In range - start blinking");
+            tmp = true; // have
+            target = valkrie.transform;
+        }
+        else if (disWizard <= range)
+        {
+            //Debug.Log("In range - start blinking");
+            tmp = true; // have
+            target = wizard.transform;
         }
         else
         {
             tmp = false;
+            //Debug.Log("Out of range - stop blinking");
         }
         return tmp;
     }
@@ -100,7 +133,25 @@ public class Death : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
 
-        //player.GetComponent<Player>().health -= deathHold;
-        trackDeathHold += deathHold;
+        if (target == elf)
+        {
+            elf.GetComponent<Player>().health -= deathHold;
+            trackDeathHold += deathHold;
+        }
+        else if (target == warrior)
+        {
+            warrior.GetComponent<Player>().health -= deathHold;
+            trackDeathHold += deathHold;
+        }
+        else if (target == valkrie)
+        {
+            valkrie.GetComponent<Player>().health -= deathHold;
+            trackDeathHold += deathHold;
+        }
+        else if (target == wizard)
+        {
+            wizard.GetComponent<Player>().health -= deathHold;
+            trackDeathHold += deathHold;
+        }
     }
 }
