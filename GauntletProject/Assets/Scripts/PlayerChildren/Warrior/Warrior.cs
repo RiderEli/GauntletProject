@@ -5,4 +5,5 @@ using UnityEngine;
 public class Warrior : Player
 {
     //Warrior Child Class for Player
+    //Leave Controller to WASD
 }

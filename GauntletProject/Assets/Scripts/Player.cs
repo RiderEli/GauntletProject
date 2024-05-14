@@ -6,6 +6,7 @@ using static UnityEngine.InputSystem.DefaultInputActions;
 
 public class Player : MonoBehaviour
 {
+    public GameObject Spawn;
     public PlayerController controller;
     private Rigidbody playerRB;
 
@@ -19,7 +20,7 @@ public class Player : MonoBehaviour
     private Vector3 playerRot;
 
     public GameObject screenWipe;
-    private void Awake()
+    public virtual void Awake()
     {
         playerRB = GetComponent<Rigidbody>();
         controller = new PlayerController();
@@ -27,10 +28,14 @@ public class Player : MonoBehaviour
         moveSpeed = 5f;
         _hasShot = false;
         screenWipe.SetActive(false);
+        health = GameManager.Instance.playerHealth;
+        Spawn = GameObject.FindGameObjectWithTag("Spawn");
+        GameObject.DontDestroyOnLoad(gameObject);
     }
 
     public virtual void Start()
     {
+        transform.position = Spawn.transform.position;
         controller.Movement.Shoot.started += _ => ElizeoShoot();
         controller.Movement.UsePotion.started += _ => PotionWipe();
     }

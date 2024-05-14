@@ -14,6 +14,10 @@ TagManager:
   - Glass
   - Indestruct
   - ScreenWipe
+  - exitLevel
+  - exitLevel2
+  - exitLevel3
+  - Spawn
   layers:
   - Default
   - TransparentFX

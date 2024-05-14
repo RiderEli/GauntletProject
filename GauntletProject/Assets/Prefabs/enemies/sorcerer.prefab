@@ -121,10 +121,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   spawner: {fileID: 2838319738222770619, guid: 74f64b2f26068f540922d060eea55935, type: 3}
-  elf: {fileID: 8676445842785582368, guid: aa0d61b58352efc4ba557b106e9282f0, type: 3}
-  warrior: {fileID: 8676445842785582368, guid: 6d0876798f1a1ef45bfb9efa12038716, type: 3}
-  valkrie: {fileID: 8676445842785582368, guid: 09ac3a8a0f01d6e4d9fab5abc7242238, type: 3}
-  wizard: {fileID: 8676445842785582368, guid: 6b31ecba45001ad43b7291491c8d2556, type: 3}
+  players:
+  - {fileID: 8676445842785582368, guid: aa0d61b58352efc4ba557b106e9282f0, type: 3}
+  - {fileID: 8676445842785582368, guid: 6d0876798f1a1ef45bfb9efa12038716, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   target: {fileID: 0}
   white: {fileID: 2100000, guid: c35bf1ad9d0fd0240a7552ad1e28f75d, type: 2}
   yellow: {fileID: 2100000, guid: be4226a125d252445a3b673a949fa2de, type: 2}

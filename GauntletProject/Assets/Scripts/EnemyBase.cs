@@ -19,15 +19,17 @@ public class EnemyBase : MonoBehaviour
     protected Spawner spawner;
     // the distance from the player and the enemy
     // will need to know for all players
-    [SerializeField]
-    protected GameObject elf;
-    [SerializeField]
-    protected GameObject warrior;
-    [SerializeField]
-    protected GameObject valkrie;
-    [SerializeField]
-    protected GameObject wizard;
-    [SerializeField]
+
+    public GameObject[] players;
+   // [SerializeField]
+   // protected GameObject elf;
+   // [SerializeField]
+   // protected GameObject warrior;
+    //[SerializeField]
+   // protected GameObject valkrie;
+    //[SerializeField]
+    //protected GameObject wizard;
+   // [SerializeField]
     private GameObject player;
     public Transform target;
 
@@ -44,10 +46,12 @@ public class EnemyBase : MonoBehaviour
         
         Stats();
 
-        disElf = Vector3.Distance(elf.transform.position, this.transform.position);
-        disWarrior = Vector3.Distance(warrior.transform.position, this.transform.position);
-        disValkrie = Vector3.Distance(valkrie.transform.position, this.transform.position);
-        disWizard = Vector3.Distance(wizard.transform.position, this.transform.position);
+        player = GameObject.FindGameObjectWithTag("Player");
+
+       //disElf = Vector3.Distance(elf.transform.position, this.transform.position);
+       // disWarrior = Vector3.Distance(warrior.transform.position, this.transform.position);
+        //disValkrie = Vector3.Distance(valkrie.transform.position, this.transform.position);
+      //  disWizard = Vector3.Distance(wizard.transform.position, this.transform.position);
     }
 
     protected virtual void Update()
@@ -104,7 +108,7 @@ public class EnemyBase : MonoBehaviour
         {
             //Debug.Log("In range - start blinking");
             tmp = true; // have
-            target = elf.transform;
+            target = player.transform;
             Debug.Log(target);
             Debug.Log("test1");
         }
@@ -112,19 +116,19 @@ public class EnemyBase : MonoBehaviour
         {
             //Debug.Log("In range - start blinking");
             tmp = true; // have
-            target = warrior.transform;
+            target = player.transform;
         }
         else if (disValkrie <= range)
         {
             //Debug.Log("In range - start blinking");
             tmp = true; // have
-            target = valkrie.transform;
+            target = player.transform;
         }
         else if (disWizard <= range)
         {
             //Debug.Log("In range - start blinking");
             tmp = true; // have
-            target = wizard.transform;
+            target = player.transform;
         }
         
         else
@@ -179,21 +183,21 @@ public class EnemyBase : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            if (target == elf)
+            if (target == player)
             {
-                elf.GetComponent<Elf>().health -= damage;
+                player.GetComponent<Elf>().health -= damage;
             }
-            else if (target == warrior)
+            else if (target == player)
             {
-                warrior.GetComponent<Warrior>().health -= damage;
+                player.GetComponent<Warrior>().health -= damage;
             }
-            else if (target == valkrie)
+            else if (target == player)
             {
-                valkrie.GetComponent<Valkrie>().health -= damage;
+                player.GetComponent<Valkrie>().health -= damage;
             }
-            else if (target == wizard)
+            else if (target == player)
             {
-                wizard.GetComponent<Wizard>().health -= damage;
+                player.GetComponent<Wizard>().health -= damage;
             }
         }
     }
