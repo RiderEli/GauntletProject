@@ -284,7 +284,6 @@ GameObject:
   - component: {fileID: 7326586426333784613}
   - component: {fileID: 340327952558429171}
   - component: {fileID: 3021201946924746783}
-  - component: {fileID: 3987261700922940991}
   m_Layer: 0
   m_Name: WarriorPrefab
   m_TagString: Player
@@ -384,17 +383,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80a6bca4c483a7847a04c446e79afdb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3987261700922940991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8676445842785582368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7c3e708db0cb1449a48bafa0516d5f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

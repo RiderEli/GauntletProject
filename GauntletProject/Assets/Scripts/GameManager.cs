@@ -22,6 +22,12 @@ public class GameManager : Singleton<GameManager>
     public TMPro.TextMeshProUGUI hpText;
 
     public GameObject itemPickUp;
+    public GameObject keyUI;
+    public GameObject potionUI;
+
+    public bool hasKey;
+
+    public bool hasPotion;
 
     public void Start()
     {
@@ -30,13 +36,16 @@ public class GameManager : Singleton<GameManager>
         playerHealth = 2000;
         time = 0f;
         timeDelay = 0.5f;
+        hasKey = false;
+        hasPotion = false;
     }
 
     public void Update()
     {
         Display();
         HPLossDelay();
-
+        KeyThing();
+        PotionThing();
     }
 
     private void Display()
@@ -75,5 +84,29 @@ public class GameManager : Singleton<GameManager>
         yield return new WaitForSeconds(1);
         playerHealth -= 1;
         yield return new WaitForSeconds(1);
+    }
+
+    public void KeyThing()
+    {
+        if (!hasKey)
+        {
+            keyUI.SetActive(false);
+        }
+        else
+        {
+            keyUI.SetActive(true);
+        }
+    }
+
+    public void PotionThing()
+    {
+        if (!hasPotion)
+        {
+            potionUI.SetActive(false);
+        }
+        else
+        {
+            potionUI.SetActive(true);
+        }
     }
 }

@@ -8,7 +8,6 @@ public class Player : MonoBehaviour
 {
     public PlayerController controller;
     private Rigidbody playerRB;
-    
 
     public float moveSpeed;
     public GameObject shot;
@@ -19,7 +18,7 @@ public class Player : MonoBehaviour
 
     private Vector3 playerRot;
 
-
+    public GameObject screenWipe;
     private void Awake()
     {
         playerRB = GetComponent<Rigidbody>();
@@ -27,11 +26,13 @@ public class Player : MonoBehaviour
         controller.Enable();
         moveSpeed = 5f;
         _hasShot = false;
+        screenWipe.SetActive(false);
     }
 
     public virtual void Start()
     {
         controller.Movement.Shoot.started += _ => ElizeoShoot();
+        controller.Movement.UsePotion.started += _ => PotionWipe();
     }
 
     public virtual void Update()
@@ -44,6 +45,14 @@ public class Player : MonoBehaviour
         //playerRB.velocity = new Vector3(moveVec.x, 0, moveVec.y) * Time.deltaTime * moveSpeed;
         TurnPlayer();
         ShotDelay();
+        if (GameManager.Instance.hasPotion == true)
+        {
+            controller.Movement.UsePotion.Enable();
+        }
+        else
+        {
+            controller.Movement.UsePotion.Disable();
+        }
     }
 
     public void Shoot()
@@ -141,8 +150,30 @@ public class Player : MonoBehaviour
         _hasShot = false;
     }
 
-    public void RemoveItem()
+
+    public void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.gameObject.CompareTag("Door"))
+        {
+            if (GameManager.Instance.hasKey == true)
+            {
+                Destroy(collision.gameObject);
+                GameManager.Instance.hasKey = false;
+            }
+        }
+    }
+
+    public void PotionWipe()
+    {
+        screenWipe.SetActive(true);
+        GameManager.Instance.hasPotion = false;
+        StartCoroutine(wipeTime());
+    }
+
+    private IEnumerator wipeTime()
+    {
+        yield return new WaitForSeconds(1f);
+        screenWipe.SetActive(false);
     }
 }
+

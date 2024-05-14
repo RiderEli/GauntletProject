@@ -14,6 +14,7 @@ public class Key : MonoBehaviour, ICollect
        // Debug.Log("A Key has been collected");
         Destroy(gameObject);
         GameManager.Instance.currentScore += 100;
+        GameManager.Instance.hasKey = true;
     }
 
 }

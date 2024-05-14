@@ -29,6 +29,7 @@ public class Potion : MonoBehaviour, ICollect
                 //Debug.Log("Collected Potion");
                 OnPotionCollect?.Invoke();
                 Destroy(gameObject);
+                GameManager.Instance.hasPotion = true;
             break;
 
             case potionTypes.Orange:

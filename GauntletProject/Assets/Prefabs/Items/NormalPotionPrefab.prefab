@@ -118,8 +118,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c86ec5ee06dc16f459fd56284448304e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  potionData: {fileID: 11400000, guid: 6cbc287c615d05144beacffb8484dfcb, type: 2}
-  orangeData: {fileID: 11400000, guid: fd681f511888d374598e0b96c629440e, type: 2}
-  hpData: {fileID: 11400000, guid: daf3d53815833414cb49e39e2c9cde66, type: 2}
-  fullHPData: {fileID: 11400000, guid: 56024c0b4a0ba3a44a92553ac862e96c, type: 2}
   potions: 0

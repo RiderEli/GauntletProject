@@ -11,6 +11,9 @@ TagManager:
   - RangeBox
   - Weapon
   - Door
+  - Glass
+  - Indestruct
+  - ScreenWipe
   layers:
   - Default
   - TransparentFX
