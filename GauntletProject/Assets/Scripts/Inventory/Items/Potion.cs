@@ -5,17 +5,8 @@ using UnityEngine;
 
 public class Potion : MonoBehaviour, ICollect
 {
-    public static event HandlePotionCollected OnPotionCollect;
+    public static event Action OnPotionCollect;
 
-    public delegate void HandlePotionCollected(ItemData itemData);
-
-    public ItemData potionData;
-
-    public ItemData orangeData;
-
-    public ItemData hpData;
-
-    public ItemData fullHPData;
     public enum potionTypes
     {
         Normal,
@@ -36,22 +27,22 @@ public class Potion : MonoBehaviour, ICollect
         {
             case potionTypes.Normal:
                 //Debug.Log("Collected Potion");
-                OnPotionCollect?.Invoke(potionData);
+                OnPotionCollect?.Invoke();
                 Destroy(gameObject);
             break;
 
-            case potionTypes.Orange:
-                OnPotionCollect?.Invoke(orangeData);
+            case potionTypes.Orange
+                OnPotionCollect?.Invoke();
                 Destroy(gameObject);
                 break;
 
             case potionTypes.Health:
-                OnPotionCollect?.Invoke(hpData);
+                OnPotionCollect?.Invoke();
                 Destroy(gameObject);
                 break;
 
             case potionTypes.FullHealth:
-                OnPotionCollect?.Invoke(fullHPData);
+                OnPotionCollect?.Invoke();
                 Destroy(gameObject);
                 break;       
         }
