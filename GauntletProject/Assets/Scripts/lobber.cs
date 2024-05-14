@@ -11,9 +11,9 @@ public class lobber : EnemyBase
 
     protected override void Start()
     {
-        //health = spawner.spawnLevel;
+        health = spawner.spawnLevel;
         rb = GetComponent<Rigidbody>();
-        target = player.transform;
+
         Stats();
         //range = 5;
         throwRock = false;
@@ -50,17 +50,18 @@ public class lobber : EnemyBase
     {
         float fleeDis = 5f;
         float getWithinDis = 10f;
-        float myDis = Vector3.Distance(player.transform.position, this.transform.position); // have
         
         //Debug.Log(myDis);
-        if (myDis >= getWithinDis)
+        if (disElf >= getWithinDis || disWarrior >= getWithinDis
+            || disValkrie >= getWithinDis || disWizard >= getWithinDis)
         {
             throwRock = false;
             StopAllCoroutines();
             speed = 100;
             Movement();
         }
-        else if (myDis > fleeDis && myDis < getWithinDis)
+        else if (disElf > fleeDis && disElf < getWithinDis || disWarrior > fleeDis && disWarrior < getWithinDis
+                 || disValkrie > fleeDis && disValkrie < getWithinDis || disWizard > fleeDis && disWizard < getWithinDis)
         {
             //Debug.Log("--this should be seen--");
             if (!throwRock)
@@ -69,7 +70,8 @@ public class lobber : EnemyBase
                 StartCoroutine(ThrowRock());
             }
         }
-        else if (myDis <= fleeDis)
+        else if (disElf <= fleeDis || disWarrior <= fleeDis
+                || disValkrie <= fleeDis || disWizard <= fleeDis)
         {
             throwRock = false;
             StopAllCoroutines();

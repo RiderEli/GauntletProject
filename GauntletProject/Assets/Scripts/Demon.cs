@@ -17,9 +17,9 @@ public class Demon : EnemyBase
 
     protected override void Start()
     {
-        //health = spawner.spawnLevel;
+        health = spawner.spawnLevel;
         rb = GetComponent<Rigidbody>();
-        target = player.transform;
+
         Stats();
         range = 10;
         fireballRange = false;
@@ -76,6 +76,6 @@ public class Demon : EnemyBase
     
     private bool BiteRange(float biteRange)
     {
-        return Vector3.Distance(player.transform.position, this.transform.position) <= biteRange;
+        return Vector3.Distance(target.transform.position, this.transform.position) <= biteRange;
     }
 }

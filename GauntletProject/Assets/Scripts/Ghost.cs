@@ -36,7 +36,7 @@ public class Ghost : EnemyBase
     // once in range ghost will explode after a few seconds
     private bool ExplodeRange(float explodeRange)
     {
-        return Vector3.Distance(transform.position, player.transform.position) <= explodeRange;
+        return Vector3.Distance(transform.position, target.transform.position) <= explodeRange;
     }
 
     private IEnumerator BlastZone()
@@ -45,14 +45,6 @@ public class Ghost : EnemyBase
         Debug.Log("the collider should expand");
         SphereCollider sphereCollider = GetComponent<SphereCollider>();
         sphereCollider.radius = explodeRange;
-    }
-
-    // not sure if I will need this here or I can have it in Enemy script
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            gameObject.SetActive(false);
-        }
+        Destroy(this.gameObject);
     }
 }

@@ -9,16 +9,27 @@ public class Rock : MonoBehaviour
 
     private bool thrown;
     [SerializeField]
-    private GameObject player;
+    private lobber lob;
     private Vector3 target;
     private Vector3 playerLastPos;
 
+    [SerializeField]
+    private Elf elf;
+    [SerializeField]
+    private Warrior warrior;
+    [SerializeField]
+    private Valkrie valkrie;
+    [SerializeField]
+    private Wizard wizard;
+
     private void Start()
     {
+        lob = GetComponent<lobber>();
+
         rb = GetComponent<Rigidbody>();
         thrown = false;
-        player = GameObject.Find("Player");
-        playerLastPos = player.transform.position;
+        
+        playerLastPos = lob.target.position;
        
         force = 1f;
     }
@@ -63,5 +74,30 @@ public class Rock : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         Destroy(this.gameObject);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            if (lob.target == elf)
+            {
+                elf.GetComponent<Elf>().health -= lob.damage;
+            }
+            else if (lob.target == warrior)
+            {
+                warrior.GetComponent<Warrior>().health -= lob.damage;
+            }
+            else if (lob.target == valkrie)
+            {
+                valkrie.GetComponent<Valkrie>().health -= lob.damage;
+            }
+            else if (lob.target == wizard)
+            {
+                wizard.GetComponent<Wizard>().health -= lob.damage;
+            }
+
+            Destroy(this.gameObject);
+        }
     }
 }
