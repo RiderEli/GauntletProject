@@ -80,6 +80,15 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""UsePotion"",
+                    ""type"": ""Button"",
+                    ""id"": ""f2117c52-1612-48f0-b5a6-325713337791"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -280,6 +289,17 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e2b46cc8-c180-44ac-a9be-992f90409cab"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UsePotion"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -294,6 +314,7 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
         m_Movement_RotateTopRight = m_Movement.FindAction("RotateTopRight", throwIfNotFound: true);
         m_Movement_RotateBottomLeft = m_Movement.FindAction("RotateBottomLeft", throwIfNotFound: true);
         m_Movement_RotateBottomRight = m_Movement.FindAction("RotateBottomRight", throwIfNotFound: true);
+        m_Movement_UsePotion = m_Movement.FindAction("UsePotion", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -361,6 +382,7 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
     private readonly InputAction m_Movement_RotateTopRight;
     private readonly InputAction m_Movement_RotateBottomLeft;
     private readonly InputAction m_Movement_RotateBottomRight;
+    private readonly InputAction m_Movement_UsePotion;
     public struct MovementActions
     {
         private @PlayerController m_Wrapper;
@@ -371,6 +393,7 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
         public InputAction @RotateTopRight => m_Wrapper.m_Movement_RotateTopRight;
         public InputAction @RotateBottomLeft => m_Wrapper.m_Movement_RotateBottomLeft;
         public InputAction @RotateBottomRight => m_Wrapper.m_Movement_RotateBottomRight;
+        public InputAction @UsePotion => m_Wrapper.m_Movement_UsePotion;
         public InputActionMap Get() { return m_Wrapper.m_Movement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -398,6 +421,9 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
             @RotateBottomRight.started += instance.OnRotateBottomRight;
             @RotateBottomRight.performed += instance.OnRotateBottomRight;
             @RotateBottomRight.canceled += instance.OnRotateBottomRight;
+            @UsePotion.started += instance.OnUsePotion;
+            @UsePotion.performed += instance.OnUsePotion;
+            @UsePotion.canceled += instance.OnUsePotion;
         }
 
         private void UnregisterCallbacks(IMovementActions instance)
@@ -420,6 +446,9 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
             @RotateBottomRight.started -= instance.OnRotateBottomRight;
             @RotateBottomRight.performed -= instance.OnRotateBottomRight;
             @RotateBottomRight.canceled -= instance.OnRotateBottomRight;
+            @UsePotion.started -= instance.OnUsePotion;
+            @UsePotion.performed -= instance.OnUsePotion;
+            @UsePotion.canceled -= instance.OnUsePotion;
         }
 
         public void RemoveCallbacks(IMovementActions instance)
@@ -445,5 +474,6 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
         void OnRotateTopRight(InputAction.CallbackContext context);
         void OnRotateBottomLeft(InputAction.CallbackContext context);
         void OnRotateBottomRight(InputAction.CallbackContext context);
+        void OnUsePotion(InputAction.CallbackContext context);
     }
 }

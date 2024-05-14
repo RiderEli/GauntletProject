@@ -5,22 +5,28 @@ using UnityEngine;
 
 public class Potion : MonoBehaviour, ICollect
 {
-    public static event Action OnPotionCollect;
+    public static event HandlePotionCollected OnPotionCollect;
+
+    public delegate void HandlePotionCollected(ItemData itemData);
+
+    public ItemData potionData;
+
+    public ItemData orangeData;
+
+    public ItemData hpData;
+
+    public ItemData fullHPData;
     public enum potionTypes
     {
         Normal,
         Orange,
-        Armor,
-        ShotPower,
-        ShotSpeed,
-        Magic,
-        MoveSpeed,
-        FightSpeed
+        Health,
+        FullHealth,
+
     }
     public potionTypes potions;
     public void Collect()
-    {
-        OnPotionCollect?.Invoke();
+    {     
         PotionTypeSetup();
     }
 
@@ -29,33 +35,25 @@ public class Potion : MonoBehaviour, ICollect
         switch (potions)
         {
             case potionTypes.Normal:
-                Debug.Log("Collected Potion");
+                //Debug.Log("Collected Potion");
+                OnPotionCollect?.Invoke(potionData);
                 Destroy(gameObject);
             break;
 
             case potionTypes.Orange:
+                OnPotionCollect?.Invoke(orangeData);
+                Destroy(gameObject);
+                break;
 
-            break;
+            case potionTypes.Health:
+                OnPotionCollect?.Invoke(hpData);
+                Destroy(gameObject);
+                break;
 
-            case potionTypes.Armor:
-
-            break;
-
-            case potionTypes.ShotPower:
-
-            break;
-
-            case potionTypes.Magic:
-
-            break; 
-
-            case potionTypes.MoveSpeed:
-
-            break;
-
-            case potionTypes.FightSpeed:
-
-            break;                
+            case potionTypes.FullHealth:
+                OnPotionCollect?.Invoke(fullHPData);
+                Destroy(gameObject);
+                break;       
         }
     }
 }

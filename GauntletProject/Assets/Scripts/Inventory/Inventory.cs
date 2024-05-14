@@ -1,6 +1,8 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -14,11 +16,14 @@ public class Inventory : MonoBehaviour
     private void OnEnable()
     {
         Key.OnKeyCollected += Add;
+        Potion.OnPotionCollect += Add;
     }
 
     private void OnDisable()
     {
         Key.OnKeyCollected -= Add;
+        Potion.OnPotionCollect -= Add;
+
     }
     public void Add(ItemData itemData)
     {
@@ -26,7 +31,7 @@ public class Inventory : MonoBehaviour
         {
             item.AddStack();
             OnInventoryChange?.Invoke(inventory);
-            Debug.Log($"{item.itemData.displayName} total stack is now {item.stackSize}");
+            //Debug.Log($"{item.itemData.displayName} total stack is now {item.stackSize}");
         }
         else
         {
@@ -34,9 +39,11 @@ public class Inventory : MonoBehaviour
             inventory.Add(newItem);
             itemDictionary.Add(itemData, newItem);
             OnInventoryChange?.Invoke(inventory);
-            Debug.Log($"{itemData.displayName} to the inventory for the first time.");
+            //Debug.Log($"{itemData.displayName} to the inventory for the first time.");
         }
     }
+
+
 
     public void Remove(ItemData itemData)
     {
@@ -49,6 +56,14 @@ public class Inventory : MonoBehaviour
                 itemDictionary.Remove(itemData);
             }
             OnInventoryChange?.Invoke(inventory);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Door"))
+        {
+            
         }
     }
 

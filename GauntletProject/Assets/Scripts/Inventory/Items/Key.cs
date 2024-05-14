@@ -18,4 +18,5 @@ public class Key : MonoBehaviour, ICollect
         Destroy(gameObject);
         GameManager.Instance.currentScore += 100;
     }
+
 }

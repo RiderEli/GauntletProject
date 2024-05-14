@@ -140,4 +140,9 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(shotDelay);
         _hasShot = false;
     }
+
+    public void RemoveItem()
+    {
+        
+    }
 }
