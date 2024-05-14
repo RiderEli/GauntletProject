@@ -31,7 +31,7 @@ public class Potion : MonoBehaviour, ICollect
                 Destroy(gameObject);
             break;
 
-            case potionTypes.Orange
+            case potionTypes.Orange:
                 OnPotionCollect?.Invoke();
                 Destroy(gameObject);
                 break;
