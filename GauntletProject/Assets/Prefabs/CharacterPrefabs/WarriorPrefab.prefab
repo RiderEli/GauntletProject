@@ -280,9 +280,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5927068049803938507}
-  - component: {fileID: 4294836543208601210}
   - component: {fileID: 7326586426333784613}
   - component: {fileID: 340327952558429171}
+  - component: {fileID: 4294836543208601210}
   - component: {fileID: 3021201946924746783}
   m_Layer: 0
   m_Name: WarriorPrefab
@@ -309,22 +309,6 @@ Transform:
   - {fileID: 5367834818260290607}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4294836543208601210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8676445842785582368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e812cc7647e27e4ca9fc252ecb0eabf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  shot: {fileID: 394650226331479970, guid: c63d00ff21e985b4c872560900ed70bc, type: 3}
-  health: 10
-  shotDelay: 1
 --- !u!54 &7326586426333784613
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -373,6 +357,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.6, y: 1, z: 0.5}
   m_Center: {x: 0, y: -0.2, z: -0.2}
+--- !u!114 &4294836543208601210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8676445842785582368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e812cc7647e27e4ca9fc252ecb0eabf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  shot: {fileID: 394650226331479970, guid: c63d00ff21e985b4c872560900ed70bc, type: 3}
+  health: 10
+  shotDelay: 1
+  screenWipe: {fileID: 0}
 --- !u!114 &3021201946924746783
 MonoBehaviour:
   m_ObjectHideFlags: 0
