@@ -7,14 +7,15 @@ public class Death : MonoBehaviour
     private float speed = 110;
     private Rigidbody rb;
     [SerializeField]
-    protected GameObject elf;
+    private GameObject elf;
     [SerializeField]
-    protected GameObject warrior;
+    private GameObject warrior;
     [SerializeField]
-    protected GameObject valkrie;
+    private GameObject valkrie;
     [SerializeField]
-    protected GameObject wizard;
-
+    private GameObject wizard;
+    [SerializeField]
+    private GameObject player;
     private Transform target;
     private float range = 15;
     private int damageTaken;
@@ -32,6 +33,7 @@ public class Death : MonoBehaviour
     {
         if (CheckDis())
         {
+            Debug.Log(CheckDis());
             Movement();
         }
 
@@ -48,13 +50,23 @@ public class Death : MonoBehaviour
         float disWarrior = Vector3.Distance(warrior.transform.position, this.transform.position);
         float disValkrie = Vector3.Distance(valkrie.transform.position, this.transform.position);
         float disWizard = Vector3.Distance(wizard.transform.position, this.transform.position);
-
+        //float myDis = Vector3.Distance(player.transform.position, this.transform.position);
         bool tmp = false; // have
+        /*
+        if (myDis <= range)
+        {
+            tmp = true;
+            //target = player.transform;
+        }
+        */
+        
         if (disElf <= range)
         {
             //Debug.Log("In range - start blinking");
             tmp = true; // have
             target = elf.transform;
+            Debug.Log(target);
+            Debug.Log("test1");
         }
         else if (disWarrior <= range)
         {
@@ -74,6 +86,7 @@ public class Death : MonoBehaviour
             tmp = true; // have
             target = wizard.transform;
         }
+        
         else
         {
             tmp = false;
@@ -86,7 +99,7 @@ public class Death : MonoBehaviour
     {
         // enemy looks at target
         transform.LookAt(target);
-
+        
         // enemy moves towards player
         rb.AddForce(speed * Time.deltaTime * transform.forward);
     }
@@ -117,7 +130,7 @@ public class Death : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            StartCoroutine(PlayerHealthDrain());
+            //StartCoroutine(PlayerHealthDrain());
         }
     }
 
@@ -128,7 +141,7 @@ public class Death : MonoBehaviour
             StopAllCoroutines();
         }
     }
-
+    
     private IEnumerator PlayerHealthDrain()
     {
         yield return new WaitForSeconds(2);
