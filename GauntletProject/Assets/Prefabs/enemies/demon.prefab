@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7097918526264520514}
   - component: {fileID: 2140439903337491560}
   - component: {fileID: 80604187487281482}
+  - component: {fileID: 7802895142881344316}
   m_Layer: 0
   m_Name: demon
   m_TagString: Untagged
@@ -118,11 +119,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28be3efd1e5a3324f8ed304826cc8ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
   spawner: {fileID: 2838319738222770619, guid: 74f64b2f26068f540922d060eea55935, type: 3}
   elf: {fileID: 8676445842785582368, guid: aa0d61b58352efc4ba557b106e9282f0, type: 3}
   warrior: {fileID: 8676445842785582368, guid: 6d0876798f1a1ef45bfb9efa12038716, type: 3}
   valkrie: {fileID: 8676445842785582368, guid: 09ac3a8a0f01d6e4d9fab5abc7242238, type: 3}
   wizard: {fileID: 8676445842785582368, guid: 6b31ecba45001ad43b7291491c8d2556, type: 3}
-  player: {fileID: 0}
+  target: {fileID: 0}
   fireballPrefab: {fileID: 7508044515665683782, guid: 48f99c6f44f4cae448d57375b35e8bf3,
     type: 3}
+--- !u!54 &7802895142881344316
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8957068543992242230}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0.35
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 0
