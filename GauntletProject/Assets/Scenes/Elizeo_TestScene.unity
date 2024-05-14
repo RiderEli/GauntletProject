@@ -225,7 +225,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 278, y: 235}
+  m_AnchoredPosition: {x: 439, y: 235}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &333957333
@@ -358,6 +358,8 @@ MonoBehaviour:
   highScore: 0
   dungeonLevel: 0
   playerHealth: 0
+  time: 0
+  timeDelay: 0
   dialouge: {fileID: 0}
   scoreText: {fileID: 333957333}
   dungeonText: {fileID: 0}
@@ -635,7 +637,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 663, y: -60}
+  m_AnchoredPosition: {x: 1276, y: -60}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &617765683
@@ -1085,7 +1087,7 @@ RectTransform:
   m_GameObject: {fileID: 1816707381}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.1616, y: 5.419, z: 1.7866}
+  m_LocalScale: {x: 6.5091023, y: 10.778934, z: 1.7866}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 548977315}
