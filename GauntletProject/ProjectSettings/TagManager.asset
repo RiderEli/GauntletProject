@@ -10,7 +10,6 @@ TagManager:
   - Fireball
   - RangeBox
   - Weapon
-  - exitLevel
   layers:
   - Default
   - TransparentFX

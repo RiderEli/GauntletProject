@@ -27,8 +27,7 @@ public class EnemyBase : MonoBehaviour
     protected GameObject valkrie;
     [SerializeField]
     protected GameObject wizard;
-    [SerializeField]
-    private GameObject player;
+
     public Transform target;
 
     protected float range = 5f;
@@ -90,23 +89,14 @@ public class EnemyBase : MonoBehaviour
 
     protected bool CheckDis()
     {
-        //float myDis = Vector3.Distance(player.transform.position, this.transform.position);
-        bool tmp = false; // have
-        /*
-        if (myDis <= range)
-        {
-            tmp = true;
-            //target = player.transform;
-        }
-        */
         
+
+        bool tmp = false; // have
         if (disElf <= range)
         {
             //Debug.Log("In range - start blinking");
             tmp = true; // have
             target = elf.transform;
-            Debug.Log(target);
-            Debug.Log("test1");
         }
         else if (disWarrior <= range)
         {
@@ -126,7 +116,6 @@ public class EnemyBase : MonoBehaviour
             tmp = true; // have
             target = wizard.transform;
         }
-        
         else
         {
             tmp = false;

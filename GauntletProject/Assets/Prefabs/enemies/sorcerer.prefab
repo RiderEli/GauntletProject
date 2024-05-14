@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8956958531155602746}
   - component: {fileID: 7807525029540036891}
   - component: {fileID: 7564881086023024028}
-  - component: {fileID: -4880111995172153111}
   m_Layer: 0
   m_Name: sorcerer
   m_TagString: Untagged
@@ -119,39 +118,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2894f23e7dcdeda42965811d74cc61a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
   spawner: {fileID: 2838319738222770619, guid: 74f64b2f26068f540922d060eea55935, type: 3}
   elf: {fileID: 8676445842785582368, guid: aa0d61b58352efc4ba557b106e9282f0, type: 3}
   warrior: {fileID: 8676445842785582368, guid: 6d0876798f1a1ef45bfb9efa12038716, type: 3}
   valkrie: {fileID: 8676445842785582368, guid: 09ac3a8a0f01d6e4d9fab5abc7242238, type: 3}
   wizard: {fileID: 8676445842785582368, guid: 6b31ecba45001ad43b7291491c8d2556, type: 3}
-  target: {fileID: 0}
   white: {fileID: 2100000, guid: c35bf1ad9d0fd0240a7552ad1e28f75d, type: 2}
   yellow: {fileID: 2100000, guid: be4226a125d252445a3b673a949fa2de, type: 2}
---- !u!54 &-4880111995172153111
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8533669262426819981}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0.35
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 84
-  m_CollisionDetection: 0
